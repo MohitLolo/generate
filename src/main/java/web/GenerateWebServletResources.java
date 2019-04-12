@@ -72,6 +72,7 @@ public abstract class GenerateWebServletResources extends HttpServlet {
         }
 
         if (path.contains(".json")) {
+            response.setContentType("text/html;charset=utf-8");
             response.getWriter().print(jsonResult(request));
             return;
         }

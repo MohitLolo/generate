@@ -2,10 +2,8 @@ package web;
 
 import base.GenerateParameter;
 import base.GenerationUtil;
-import com.alibaba.fastjson.JSON;
 import entity.Table;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 import java.util.Arrays;
@@ -99,7 +97,7 @@ public class GenerateServlet extends GenerateWebServletResources {
             result.setCount(tableList.size());
             //result.setMsg("查询成功");
             result.setData(tableList);
-            return JSON.toJSONString(result);
+            return result.toString();
         } catch (SQLException e) {
             e.printStackTrace();
         }
