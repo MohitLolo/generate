@@ -11,7 +11,7 @@
      
      非maven项目将：generate-1.0.jar 配置入项目Build Path
 ##### 2.构建与配置:
-######2.2 GenerationUtil的构建
+###### 2.2 GenerationUtil的构建
 
 GenerationUtil为代码生成器对外部暴露的主类，提供两个方法:
 
@@ -31,7 +31,7 @@ GenerationUtil为代码生成器对外部暴露的主类，提供两个方法:
      (1) 基于Spring IOC的构建(推荐使用);
      (2) 数据源参数构建
 
-######2.2.1 基于Spring IOC的 构建方式:
+###### 2.2.1 基于Spring IOC的 构建方式:
     xml配置方式：
    
     例如:
@@ -101,15 +101,15 @@ GenerationUtil为代码生成器对外部暴露的主类，提供两个方法:
               connection-init-sql: SELECT 1
               validation-timeout: 3000
               login-timeout: 5
-######2.2.2 数据源参数构建方式:
+###### 2.2.2 数据源参数构建方式:
         GenerationUtil generationUtil = 
            new GenerationUtil("数据库驱动类","数据库URL","账号","密码");
-######2.3 代码生成器的配置:
+###### 2.3 代码生成器的配置:
 代码生成器的参数配置依照：
 
         GenerateParameter 参数配置优先于本地项目 src/main/resources/generate/generate.properties 配置文件中配置 优先于 jar包默认配置项的约定使用参数
     
-######2.3.1 generate.properties文件中各项的含义:
+###### 2.3.1 generate.properties文件中各项的含义:
     注:如需使用本地generate.properties文件,需将generate.properties文件，创建于 src/main/resources/template 文件夹下
     配置文件中各项含义如下:
         model.xml.pk.type=snowflakeIdWorker
@@ -121,7 +121,7 @@ GenerationUtil为代码生成器对外部暴露的主类，提供两个方法:
         base.package : 文件所属的包 例: com.cn.jinhui
         model.xml.project : 项目名称
         model.xml.pk.type : 主键生成策略
-######2.3.2 GenerateParameter类型中各项属性的含义:
+###### 2.3.2 GenerateParameter类型中各项属性的含义:
         /**
          * 主键生成策略
          */
@@ -150,7 +150,7 @@ GenerationUtil为代码生成器对外部暴露的主类，提供两个方法:
          * 是否覆盖本地文件生成
          */
         private boolean coverage = false;
-######2.3.3 conversion.properties文件的使用:
+###### 2.3.3 conversion.properties文件的使用:
         代码生成器将会自动转换部分数据库类型为java类型，实际应用中，难免遇到代码生成器无法转换的数据库字段类型，或是默认转换类型并不符合生成需求，
       此时需使用本地conversion.properties文件进行转换类型设置
         于本地项目 src/main/resources/template 目录下创建conversion.properties文件
@@ -199,7 +199,7 @@ GenerationUtil为代码生成器对外部暴露的主类，提供两个方法:
 ##### 4.模板序号与模板枚举类:
 
         模板的使用依据，本地项目 src/main/resources/generate/template 下模板优先于jar包中默认模板原则。
-######4.1 模板及模板序号:     
+###### 4.1 模板及模板序号:     
             
             项目暂提供10个代码生成模板：
             app_controller.ftl -- 后台controller模板 序号 1001
@@ -217,7 +217,7 @@ GenerationUtil为代码生成器对外部暴露的主类，提供两个方法:
             front_index.ftl --前台index页面模板 序号 1013
             front_js.ftl --前台js模板 序号 1014
         
-######4.2 模板枚举:          
+###### 4.2 模板枚举:          
             jar包中提供模板的枚举类型(TemplateEnum)，并提供了一些方法：
             
             /**
